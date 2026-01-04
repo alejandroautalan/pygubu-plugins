@@ -1,0 +1,22 @@
+[project]
+name = "pygubu-plugins-core"
+version = "0.1.0"
+description = "Pygubu plugins repository"
+readme = "README.md"
+authors = [
+    { name = "Alejandro Autalan", email = "alejandroautalan@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+pygubu-plugins-core = "pygubu_plugins_core:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = [
+    "packages/pygubu-ttkbootstrap",
+]
