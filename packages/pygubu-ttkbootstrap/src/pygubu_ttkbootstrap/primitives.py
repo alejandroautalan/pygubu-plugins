@@ -35,9 +35,44 @@ from pygubu.plugins.ttk.ttkstdwidgets import (
 from .config import primitives, primitives_ns, tab_group
 
 
-class BadgeBO(BuilderObject):
+class LabelBO(BuilderObject):
+    class_ = Label
+    properties = (
+        "class_",
+        "cursor",
+        "text",
+        "textvariable",
+        "image",
+        "icon",
+        "icon_only",
+        "compound",
+        "anchor",
+        "justify",
+        "localize",
+        "value_format",
+        "padding",
+        "width",
+        "wraplength",
+        "font",
+        "foreground",
+        "background",
+        "relief",
+        "state",
+        "takefocus",
+        "style",
+        "color",
+        "variant",
+    )
+    ro_properties = ("color",)  # FIXME
+
+
+register_widget(
+    primitives.label, LabelBO, "Label", tab_group, group=primitives_ns.label
+)
+
+
+class BadgeBO(LabelBO):
     class_ = Badge
-    properties = ("text",)
 
 
 register_widget(
@@ -138,16 +173,6 @@ register_widget(
     "GridFrame",
     tab_group,
     group=primitives_ns.gridframe,
-)
-
-
-class LabelBO(BuilderObject):
-    class_ = Label
-    properties = ("text",)
-
-
-register_widget(
-    primitives.label, LabelBO, "Label", tab_group, group=primitives_ns.label
 )
 
 

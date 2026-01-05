@@ -4,12 +4,26 @@ from ..config import namespace, windows  # primitives
 _builder_all = f"{namespace}.*"
 
 plugin_properties = {
+    "color": dict(
+        buid=_builder_all,
+        editor="choice",
+        values=("", "primary", "danger", "success"),
+        state="readonly",
+    ),
+    "variant": dict(
+        buid=_builder_all,
+        editor="choice",
+        values=("", "default", "inverse"),
+        state="readonly",
+    ),
+    "icon": dict(buid=_builder_all),
     "maxsize": dict(buid=[windows.app, windows.toplevel], editor="whentry"),
     "minsize": dict(buid=[windows.app, windows.toplevel], editor="whentry"),
     "resizable": dict(
         buid=[windows.app, windows.toplevel],
         editor="choice",
         values=("", "both", "horizontally", "vertically", "none"),
+        state="readonly",
     ),
 }
 
