@@ -7,11 +7,12 @@ namespace = "ttkbootstrap"
 CONTAINER = 50
 INPUT = 90
 
-runtime_ns = SN(
+windows_ns = SN(
     _name=namespace,
     app=10,
+    toplevel=10,
 )
-runtime = walkns(runtime_ns)
+windows = walkns(windows_ns)
 
 primitives_ns = SN(
     _name=namespace,

@@ -1,7 +1,9 @@
 import tkinter as tk
 from pygubu.api.v1 import IDesignerPlugin
 from pygubu.utils.widget import crop_widget
-from ..config import namespace, primitives
+from ..config import namespace, primitives, windows
+from .preview import ToplevelFramePreviewBO
+from .properties import plugin_properties as plugin_properties
 
 
 class ttkbDesignerPlugin(IDesignerPlugin):
@@ -11,6 +13,20 @@ class ttkbDesignerPlugin(IDesignerPlugin):
         primitives.panedwindow,
         primitives.panedwindow_pane,
     )
+
+    def is_toplevel_widget(self, builder_uid: str) -> bool:
+        """Return True if builder widget is a toplevel widget.
+
+        Example: for tk.Tk, tk.Toplevel should return True.
+        """
+        if builder_uid in (windows.app, windows.toplevel):
+            return True
+        return False
+
+    def get_preview_builder(self, builder_uid: str):
+        if builder_uid in (windows.app, windows.toplevel):
+            return ToplevelFramePreviewBO
+        return None
 
     def configure_for_preview(self, builder_uid: str, widget):
         if builder_uid.startswith(namespace):

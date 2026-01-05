@@ -1,12 +1,17 @@
 import importlib
 from pygubu.api.v1 import BuilderLoaderPlugin
-from .config import primitives, namespace
+from .config import namespace, windows, primitives
 
 
 class ttkbootstrapPlugin(BuilderLoaderPlugin):
     module_map = {
-        "pygubu_ttkbootstrap.windows": (f"{namespace}.Window",),
-        "pygubu_ttkbootstrap.primitives": (primitives.frame,),
+        "pygubu_ttkbootstrap.windows": (windows.app, windows.toplevel),
+        "pygubu_ttkbootstrap.primitives": (
+            primitives.frame,
+            primitives.labelframe,
+            primitives.label,
+            primitives.button,
+        ),
     }
 
     def do_activate(self) -> bool:
