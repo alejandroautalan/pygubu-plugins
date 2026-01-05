@@ -1,5 +1,4 @@
 from pygubu.api.v1 import BuilderObject, register_widget
-from .config import primitives, tab_group
 from ttkbootstrap import (
     Badge,
     Button,
@@ -33,6 +32,7 @@ from pygubu.plugins.ttk.ttkstdwidgets import (
     TTKTreeviewBO,
     TTKTreeviewColumnBO,
 )
+from .config import primitives, primitives_ns, tab_group
 
 
 class BadgeBO(BuilderObject):
@@ -40,7 +40,9 @@ class BadgeBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.badge, BadgeBO, "Badge", tab_group)
+register_widget(
+    primitives.badge, BadgeBO, "Badge", tab_group, group=primitives_ns.badge
+)
 
 
 class ButtonBO(BuilderObject):
@@ -48,7 +50,9 @@ class ButtonBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.button, ButtonBO, "Button", tab_group)
+register_widget(
+    primitives.button, ButtonBO, "Button", tab_group, group=primitives_ns.button
+)
 
 
 class CheckButtonBO(BuilderObject):
@@ -56,7 +60,13 @@ class CheckButtonBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.checkbutton, CheckButtonBO, "CheckButton", tab_group)
+register_widget(
+    primitives.checkbutton,
+    CheckButtonBO,
+    "CheckButton",
+    tab_group,
+    group=primitives_ns.checkbutton,
+)
 
 
 class CheckToggleBO(BuilderObject):
@@ -64,7 +74,13 @@ class CheckToggleBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.checktoogle, CheckToggleBO, "CheckToggle", tab_group)
+register_widget(
+    primitives.checktoogle,
+    CheckToggleBO,
+    "CheckToggle",
+    tab_group,
+    group=primitives_ns.checktoogle,
+)
 
 
 class ComboboxBO(BuilderObject):
@@ -72,7 +88,9 @@ class ComboboxBO(BuilderObject):
     properties = tuple()
 
 
-register_widget(primitives.combobox, ComboboxBO, "Combobox", tab_group)
+register_widget(
+    primitives.combobox, ComboboxBO, "Combobox", tab_group, group=primitives_ns.combobox
+)
 
 
 class EntryBO(BuilderObject):
@@ -80,7 +98,9 @@ class EntryBO(BuilderObject):
     properties = []
 
 
-register_widget(primitives.entry, EntryBO, "Entry", tab_group)
+register_widget(
+    primitives.entry, EntryBO, "Entry", tab_group, group=primitives_ns.entry
+)
 
 
 class FrameBO(BuilderObject):
@@ -100,7 +120,9 @@ class FrameBO(BuilderObject):
     )
 
 
-register_widget(primitives.frame, FrameBO, "Frame", tab_group)
+register_widget(
+    primitives.frame, FrameBO, "Frame", tab_group, group=primitives_ns.frame
+)
 
 
 class GridFrameBO(BuilderObject):
@@ -110,7 +132,13 @@ class GridFrameBO(BuilderObject):
     properties = ("class_",)
 
 
-register_widget(primitives.gridframe, GridFrameBO, "GridFrame", tab_group)
+register_widget(
+    primitives.gridframe,
+    GridFrameBO,
+    "GridFrame",
+    tab_group,
+    group=primitives_ns.gridframe,
+)
 
 
 class LabelBO(BuilderObject):
@@ -118,7 +146,9 @@ class LabelBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.label, LabelBO, "Label", tab_group)
+register_widget(
+    primitives.label, LabelBO, "Label", tab_group, group=primitives_ns.label
+)
 
 
 class LabelFrameBO(BuilderObject):
@@ -131,7 +161,13 @@ class LabelFrameBO(BuilderObject):
     )
 
 
-register_widget(primitives.labelframe, LabelFrameBO, "LabelFrame", tab_group)
+register_widget(
+    primitives.labelframe,
+    LabelFrameBO,
+    "LabelFrame",
+    tab_group,
+    group=primitives_ns.labelframe,
+)
 
 
 class MenuButtonBO(BuilderObject):
@@ -139,7 +175,13 @@ class MenuButtonBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.menubutton, MenuButtonBO, "MenuButton", tab_group)
+register_widget(
+    primitives.menubutton,
+    MenuButtonBO,
+    "MenuButton",
+    tab_group,
+    group=primitives_ns.menubutton,
+)
 
 
 class NotebookBO(BuilderObject):
@@ -152,7 +194,9 @@ class NotebookBO(BuilderObject):
     )
 
 
-register_widget(primitives.notebook, NotebookBO, "Notebook", tab_group)
+register_widget(
+    primitives.notebook, NotebookBO, "Notebook", tab_group, group=primitives_ns.notebook
+)
 
 Progressbar
 
@@ -160,7 +204,13 @@ Progressbar
 class NotebookTabBO(TTKNotebookTab): ...
 
 
-register_widget(primitives.notebook_tab, NotebookTabBO, "Notebook.Tab", tab_group)
+register_widget(
+    primitives.notebook_tab,
+    NotebookTabBO,
+    "Notebook.Tab",
+    tab_group,
+    group=primitives_ns.notebook_tab,
+)
 
 NotebookTabBO.add_allowed_parent(primitives.notebook)
 
@@ -170,7 +220,13 @@ class OptionMenuBO(BuilderObject):
     properties = ("padding",)
 
 
-register_widget(primitives.optionmenu, OptionMenuBO, "OptionMenu", tab_group)
+register_widget(
+    primitives.optionmenu,
+    OptionMenuBO,
+    "OptionMenu",
+    tab_group,
+    group=primitives_ns.optionmenu,
+)
 
 
 class PackFrameBO(BuilderObject):
@@ -180,7 +236,13 @@ class PackFrameBO(BuilderObject):
     properties = ("padding",)
 
 
-register_widget(primitives.packframe, PackFrameBO, "PackFrame", tab_group)
+register_widget(
+    primitives.packframe,
+    PackFrameBO,
+    "PackFrame",
+    tab_group,
+    group=primitives_ns.packframe,
+)
 
 
 class PanedWindowBO(BuilderObject):
@@ -191,14 +253,24 @@ class PanedWindowBO(BuilderObject):
     ro_properties = ("orient",)
 
 
-register_widget(primitives.panedwindow, PanedWindowBO, "PanedWindow", tab_group)
+register_widget(
+    primitives.panedwindow,
+    PanedWindowBO,
+    "PanedWindow",
+    tab_group,
+    group=primitives_ns.panedwindow,
+)
 
 
 class PanedWindowPaneBO(TTKPanedwindowPane): ...
 
 
 register_widget(
-    primitives.panedwindow_pane, PanedWindowPaneBO, "PanedWindow.Pane", tab_group
+    primitives.panedwindow_pane,
+    PanedWindowPaneBO,
+    "PanedWindow.Pane",
+    tab_group,
+    group=primitives_ns.panedwindow_pane,
 )
 
 PanedWindowPaneBO.add_allowed_parent(primitives.panedwindow)
@@ -212,7 +284,13 @@ class ProgressbarBO(BuilderObject):
     )
 
 
-register_widget(primitives.progressbar, ProgressbarBO, "Progressbar", tab_group)
+register_widget(
+    primitives.progressbar,
+    ProgressbarBO,
+    "Progressbar",
+    tab_group,
+    group=primitives_ns.progressbar,
+)
 
 
 class RadioButtonBO(BuilderObject):
@@ -220,14 +298,26 @@ class RadioButtonBO(BuilderObject):
     properties = ("text",)
 
 
-register_widget(primitives.radiobutton, RadioButtonBO, "RadioButton", tab_group)
+register_widget(
+    primitives.radiobutton,
+    RadioButtonBO,
+    "RadioButton",
+    tab_group,
+    group=primitives_ns.radiobutton,
+)
 
 
 class RadioToggleBO(RadioButtonBO):
     class_ = RadioToggle
 
 
-register_widget(primitives.radiotoggle, RadioToggleBO, "RadioToggle", tab_group)
+register_widget(
+    primitives.radiotoggle,
+    RadioToggleBO,
+    "RadioToggle",
+    tab_group,
+    group=primitives_ns.radiotoggle,
+)
 
 
 class ScaleBO(BuilderObject):
@@ -239,7 +329,9 @@ class ScaleBO(BuilderObject):
     )
 
 
-register_widget(primitives.scale, ScaleBO, "Scale", tab_group)
+register_widget(
+    primitives.scrollbar, ScaleBO, "Scale", tab_group, group=primitives_ns.scrollbar
+)
 
 
 class ScrollbarBO(BuilderObject):
@@ -248,7 +340,13 @@ class ScrollbarBO(BuilderObject):
     ro_properties = ("orient",)
 
 
-register_widget(primitives.scrollbar, ScrollbarBO, "Scrollbar", tab_group)
+register_widget(
+    primitives.scrollbar,
+    ScrollbarBO,
+    "Scrollbar",
+    tab_group,
+    group=primitives_ns.scrollbar,
+)
 
 
 class SeparatorBO(BuilderObject):
@@ -257,7 +355,13 @@ class SeparatorBO(BuilderObject):
     ro_properties = ("orient",)
 
 
-register_widget(primitives.separator, SeparatorBO, "Separator", tab_group)
+register_widget(
+    primitives.separator,
+    SeparatorBO,
+    "Separator",
+    tab_group,
+    group=primitives_ns.separator,
+)
 
 
 class SizeGripBO(BuilderObject):
@@ -265,7 +369,9 @@ class SizeGripBO(BuilderObject):
     properties = []
 
 
-register_widget(primitives.sizegrip, SizeGripBO, "SizeGrip", tab_group)
+register_widget(
+    primitives.sizegrip, SizeGripBO, "SizeGrip", tab_group, group=primitives_ns.sizegrip
+)
 
 
 class SpinboxBO(BuilderObject):
@@ -273,14 +379,18 @@ class SpinboxBO(BuilderObject):
     properties = ("from_", "to")
 
 
-register_widget(primitives.spinbox, SpinboxBO, "Spinbox", tab_group)
+register_widget(
+    primitives.spinbox, SpinboxBO, "Spinbox", tab_group, group=primitives_ns.spinbox
+)
 
 
 class SwitchBO(CheckButtonBO):
     class_ = Switch
 
 
-register_widget(primitives.switch, SwitchBO, "Switch", tab_group)
+register_widget(
+    primitives.switch, SwitchBO, "Switch", tab_group, group=primitives_ns.switch
+)
 
 
 class TreeViewBO(TTKTreeviewBO):
@@ -288,11 +398,19 @@ class TreeViewBO(TTKTreeviewBO):
     allowed_children = (primitives.treeview_col,)
 
 
-register_widget(primitives.treeview, TreeViewBO, "TreeView", tab_group)
+register_widget(
+    primitives.treeview, TreeViewBO, "TreeView", tab_group, group=primitives_ns.treeview
+)
 
 
 class TreeViewColBO(TTKTreeviewColumnBO):
     allowed_parents = (primitives.treeview,)
 
 
-register_widget(primitives.treeview_col, TreeViewColBO, "TreeView.Column", tab_group)
+register_widget(
+    primitives.treeview_col,
+    TreeViewColBO,
+    "TreeView.Column",
+    tab_group,
+    group=primitives_ns.treeview_col,
+)

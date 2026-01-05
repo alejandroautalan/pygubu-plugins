@@ -4,36 +4,47 @@ from pygubu.utils.namespace import walkns, SN
 tab_group = ("ttk", "ttkbootstrap Widgets")
 namespace = "ttkbootstrap"
 
+CONTAINER = 50
+INPUT = 90
+
+runtime_ns = SN(
+    _name=namespace,
+    app=10,
+)
+runtime = walkns(runtime_ns)
+
 primitives_ns = SN(
     _name=namespace,
-    frame=1,
-    badge=1,
-    button=1,
-    checkbutton=1,
-    checktoogle=1,
-    combobox=1,
-    entry=1,
-    gridframe=1,
-    label=1,
-    labelframe=1,
-    menubutton=1,
-    notebook=1,
-    notebook_tab=1,
-    optionmenu=1,
-    packframe=1,
-    panedwindow=1,
-    panedwindow_pane=1,
-    progressbar=1,
-    radiobutton=1,
-    radiotoggle=1,
-    scale=1,
-    scrollbar=1,
-    separator=1,
-    sizegrip=1,
-    spinbox=1,
-    switch=1,
-    treeview=1,
-    treeview_col=1,
+    # containers
+    frame=CONTAINER - 5,
+    packframe=CONTAINER - 4,
+    gridframe=CONTAINER - 3,
+    labelframe=CONTAINER - 2,
+    notebook=CONTAINER,
+    notebook_tab=CONTAINER,
+    panedwindow=CONTAINER,
+    panedwindow_pane=CONTAINER,
+    # input widgets
+    label=INPUT - 5,
+    badge=INPUT - 5,
+    entry=INPUT - 4,
+    spinbox=INPUT - 4,
+    combobox=INPUT - 4,
+    button=INPUT - 3,
+    checkbutton=INPUT - 3,
+    checktoogle=INPUT - 3,
+    radiobutton=INPUT - 3,
+    radiotoggle=INPUT - 3,
+    switch=INPUT - 3,
+    menubutton=INPUT - 3,
+    optionmenu=INPUT - 3,
+    progressbar=INPUT,
+    scale=INPUT,
+    scrollbar=INPUT,
+    separator=INPUT,
+    sizegrip=INPUT,
+    treeview=INPUT,
+    treeview_col=INPUT,
 )
 
 primitives = walkns(primitives_ns)
