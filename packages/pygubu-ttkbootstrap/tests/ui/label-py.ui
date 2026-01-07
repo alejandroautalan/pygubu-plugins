@@ -8,7 +8,7 @@
       <setting id="template">fnscript</setting>
       <setting id="main_widget">label1</setting>
       <setting id="main_classname">create_label</setting>
-      <setting id="output_dir">..</setting>
+      <setting id="output_dir">../gcode</setting>
       <setting id="output_dir2" />
       <setting id="import_tkvariables">False</setting>
       <setting id="use_ttk_styledefinition_file">False</setting>
