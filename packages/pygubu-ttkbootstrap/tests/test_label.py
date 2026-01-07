@@ -4,7 +4,7 @@ import ttkbootstrap as ttk
 
 from pathlib import Path
 from .support import get_root, TestWidget
-from .create_label import create_label
+from .gcode.create_label import create_label
 
 UI_PATH = Path(__file__).parent / "ui" / "label.ui"
 

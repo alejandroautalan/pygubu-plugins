@@ -38,12 +38,12 @@ from .config import primitives, primitives_ns, tab_group
 
 class ttkbWidgetMixin:
     def _process_property_value(self, pname, value):
-        if pname == "localize":
+        if pname in ("localize", "icon_only"):
             return getboolean(value)
         return super()._process_property_value(pname, value)
 
     def _code_process_property_value(self, targetid, pname, value):
-        if pname == "localize":
+        if pname == ("localize", "icon_only"):
             return self._process_property_value(pname, value)
         return super()._code_process_property_value(targetid, pname, value)
 
@@ -73,9 +73,8 @@ class LabelBO(ttkbWidgetMixin, BuilderObject):
         "state",
         "takefocus",
         "style",
-        "color",
-        "variant",
-        "state",
+        # "color",
+        # "variant",
     )
     ro_properties = ("color",)  # FIXME
 

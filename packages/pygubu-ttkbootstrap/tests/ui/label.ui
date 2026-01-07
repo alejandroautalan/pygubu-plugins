@@ -16,9 +16,22 @@
     </containerlayout>
     <child>
       <object class="ttkbootstrap.label" id="label1">
+        <property name="anchor">se</property>
+        <property name="background">#ffd6ff</property>
         <property name="compound">left</property>
+        <property name="cursor">boat</property>
+        <property name="foreground">#182400</property>
         <property name="icon">gear</property>
+        <property name="icon_only">False</property>
+        <property name="justify">center</property>
+        <property name="padding">5p 5p 5p 5p</property>
+        <property name="relief">solid</property>
+        <property name="state">normal</property>
+        <property name="takefocus">true</property>
         <property name="text" translatable="yes">label1</property>
+        <property name="textvariable">string:my_text_var</property>
+        <property name="width">8</property>
+        <property name="wraplength">50</property>
         <layout manager="pack">
           <property name="expand">true</property>
           <property name="side">top</property>

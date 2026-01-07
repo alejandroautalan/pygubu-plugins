@@ -11,6 +11,13 @@ plugin_properties = dict(
         state="readonly",
     ),
     icon=dict(buid=_builder_all),
+    icon_only=dict(
+        buid=_builder_all,
+        editor="choice",
+        values=("True", "False"),
+        default_value="False",
+        state="readonly",
+    ),
     maxsize=dict(buid=[windows.app, windows.toplevel], editor="whentry"),
     minsize=dict(buid=[windows.app, windows.toplevel], editor="whentry"),
     resizable=dict(

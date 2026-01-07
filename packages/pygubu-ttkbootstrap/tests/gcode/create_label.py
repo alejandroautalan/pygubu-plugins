@@ -55,7 +55,25 @@ def create_label(
     #
     # Begin UI code
     label1 = Label(master)
-    label1.configure(anchor="center", compound="left", icon="gear", text="label1")
+    my_text_var = tk.StringVar(value="label1")
+    label1.configure(
+        anchor="se",
+        background="#ffd6ff",
+        compound="left",
+        cursor="boat",
+        foreground="#182400",
+        icon="gear",
+        icon_only=False,
+        justify="center",
+        padding="5p 5p 5p 5p",
+        relief="solid",
+        state="normal",
+        takefocus=True,
+        text="label1",
+        textvariable=my_text_var,
+        width=8,
+        wraplength=50,
+    )
     # First object created
     on_first_object_cb(label1)
 
