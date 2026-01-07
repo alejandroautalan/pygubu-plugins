@@ -20,3 +20,13 @@ build-backend = "uv_build"
 members = [
     "packages/pygubu-ttkbootstrap",
 ]
+
+[tool.uv.sources]
+pygubu = { path = "../pygubu", editable = true }
+pygubu-designer = { path = "../pygubu-designer", editable = true }
+
+[dependency-groups]
+dev = [
+    "pygubu",
+    "pygubu-designer",
+]

@@ -21,3 +21,8 @@ build-backend = "uv_build"
 
 [tool.uv.sources]
 ttkbootstrap = { git = "https://github.com/israel-dryer/ttkbootstrap.git", branch = "release/v2" }
+
+[dependency-groups]
+dev = [
+    "ttkbootstrap-icons-bs>=1.0.0",
+]
