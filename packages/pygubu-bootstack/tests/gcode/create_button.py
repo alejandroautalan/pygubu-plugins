@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import tkinter as tk
-from ttkbootstrap.widgets.primitives.button import Button
+from bootstack.widgets.primitives.button import Button
 
 
 def i18n_translator_noop(value):

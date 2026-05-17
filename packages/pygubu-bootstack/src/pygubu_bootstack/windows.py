@@ -1,5 +1,5 @@
 from pygubu.api.v1 import BuilderObject, register_widget
-from ttkbootstrap import App, Toplevel
+from bootstack import App, Toplevel
 from .config import windows, windows_ns, tab_group
 
 

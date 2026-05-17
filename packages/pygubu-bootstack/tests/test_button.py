@@ -1,6 +1,6 @@
 import pygubu
 import unittest
-import ttkbootstrap as ttk
+import bootstack as ttk
 
 from pathlib import Path
 from .support import get_root, TestWidget

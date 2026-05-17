@@ -1,28 +1,23 @@
 [project]
-name = "pygubu-ttkbootstrap"
+name = "pygubu-bootstack"
 version = "0.1.0"
-description = "ttkbootstrap support for pygubu"
+description = "bootstack support for pygubu"
 readme = "README.md"
 authors = [
     { name = "Alejandro Autalan", email = "alejandroautalan@gmail.com" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
+    "bootstack>=0.1.0a9",
     "pygubu>=0.39",
-    "ttkbootstrap",
 ]
 
 [project.entry-points.'pygubu.plugins']
-a = 'pygubu_ttkbootstrap'
+a = 'pygubu_bootstack'
 
 [build-system]
 requires = ["uv_build>=0.9.18,<0.10.0"]
 build-backend = "uv_build"
 
-[tool.uv.sources]
-ttkbootstrap = { git = "https://github.com/israel-dryer/ttkbootstrap.git", branch = "release/v2" }
-
 [dependency-groups]
-dev = [
-    "ttkbootstrap-icons-bs>=1.0.0",
-]
+dev = []

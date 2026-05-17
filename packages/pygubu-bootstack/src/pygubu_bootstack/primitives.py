@@ -1,6 +1,6 @@
 from tkinter import getboolean
 from pygubu.api.v1 import BuilderObject, register_widget
-from ttkbootstrap import (
+from bootstack import (
     Badge,
     Button,
     CheckButton,

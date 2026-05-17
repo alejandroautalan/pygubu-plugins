@@ -5,8 +5,8 @@ from .config import namespace, windows, primitives
 
 class ttkbootstrapPlugin(BuilderLoaderPlugin):
     module_map = {
-        "pygubu_ttkbootstrap.windows": (windows.app, windows.toplevel),
-        "pygubu_ttkbootstrap.primitives": (
+        "pygubu_bootstack.windows": (windows.app, windows.toplevel),
+        "pygubu_bootstack.primitives": (
             primitives.frame,
             primitives.labelframe,
             primitives.label,
@@ -15,7 +15,7 @@ class ttkbootstrapPlugin(BuilderLoaderPlugin):
     }
 
     def do_activate(self) -> bool:
-        spec = importlib.util.find_spec("ttkbootstrap")
+        spec = importlib.util.find_spec("bootstack")
         return spec is not None
 
     def get_module_for(self, identifier: str) -> str:

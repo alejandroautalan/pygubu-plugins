@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import tkinter as tk
-from ttkbootstrap.widgets.primitives.label import Label
+from bootstack.widgets.primitives.label import Label
 
 
 def i18n_translator_noop(value):

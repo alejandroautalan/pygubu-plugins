@@ -1,5 +1,5 @@
 import unittest
-import ttkbootstrap as tk
+import bootstack as tk
 
 root = None
 

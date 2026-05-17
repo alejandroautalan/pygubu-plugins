@@ -18,7 +18,7 @@ build-backend = "uv_build"
 
 [tool.uv.workspace]
 members = [
-    "packages/pygubu-ttkbootstrap",
+    "packages/pygubu-bootstack",
 ]
 
 [tool.uv.sources]

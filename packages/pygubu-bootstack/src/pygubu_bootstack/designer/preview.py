@@ -3,7 +3,7 @@ from pygubu.plugins.pygubu.designer.basehelpers import (
     ToplevelPreviewMixin,
     ToplevelPreviewBaseBO,
 )
-from ttkbootstrap import Frame
+from bootstack import Frame
 
 
 ToplevelFramePreview = ToplevelPreviewFactory(
