@@ -21,7 +21,7 @@
     <customwidgets />
     <resources />
   </project>
-  <object class="ttkbootstrap.frame" id="frame1">
+  <object class="bootstack.frame" id="frame1">
     <property name="height">200</property>
     <property name="width">200</property>
     <layout manager="pack">
@@ -31,7 +31,7 @@
       <property name="propagate">false</property>
     </containerlayout>
     <child>
-      <object class="ttkbootstrap.button" id="button1">
+      <object class="bootstack.button" id="button1">
         <property name="anchor">sw</property>
         <property name="compound">right</property>
         <property name="icon">gear</property>

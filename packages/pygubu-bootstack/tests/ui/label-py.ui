@@ -4,24 +4,26 @@
     <settings>
       <setting id="name">Label Test</setting>
       <setting id="description">Test Label code generation</setting>
-      <setting id="module_name">create_label</setting>
       <setting id="template">fnscript</setting>
       <setting id="main_widget">label1</setting>
+      <setting id="module_namespace" />
+      <setting id="module_name">create_label</setting>
       <setting id="main_classname">create_label</setting>
       <setting id="output_dir">../gcode</setting>
+      <setting id="builder_namespace">custom_widgets</setting>
       <setting id="output_dir2" />
-      <setting id="import_tkvariables">False</setting>
-      <setting id="use_ttk_styledefinition_file">False</setting>
+      <setting id="generate_code_onsave">False</setting>
       <setting id="use_i18n">False</setting>
       <setting id="all_ids_attributes">False</setting>
-      <setting id="generate_code_onsave">False</setting>
+      <setting id="import_tkvariables">False</setting>
+      <setting id="use_ttk_styledefinition_file">False</setting>
       <setting id="use_window_centering_code">False</setting>
       <setting id="ttk_style_definition_file" />
     </settings>
     <customwidgets />
     <resources />
   </project>
-  <object class="ttkbootstrap.frame" id="frame1">
+  <object class="bootstack.frame" id="frame1">
     <property name="height">200</property>
     <property name="width">200</property>
     <layout manager="pack">
@@ -31,7 +33,7 @@
       <property name="propagate">false</property>
     </containerlayout>
     <child>
-      <object class="ttkbootstrap.label" id="label1">
+      <object class="bootstack.label" id="label1">
         <property name="anchor">se</property>
         <property name="background">#ffd6ff</property>
         <property name="compound">left</property>

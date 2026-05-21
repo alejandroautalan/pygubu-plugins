@@ -1,19 +1,27 @@
 #!/usr/bin/python3
+"""
+Label Test
+
+Test Label code generation
+
+UI source file: label-py.ui
+"""
+
 import tkinter as tk
 from bootstack.widgets.primitives.label import Label
 
 
-def i18n_translator_noop(value):
+def safe_i18n_translator(value):
     """i18n - Setup translator in derived class file"""
     return value
 
 
-def first_object_callback_noop(widget):
+def safe_fo_callback(widget):
     """on first objec callback - Setup callback in derived class file."""
     pass
 
 
-def image_loader_default(master, image_name: str):
+def safe_image_loader(master, image_name: str):
     """Image loader - Setup image_loader in derived class file."""
     return tk.PhotoImage(file=image_name, master=master)
 
@@ -36,8 +44,8 @@ def find_callback(callbacks_bag, callback_uid):
 
 
 def create_label(
-    *,
     master=None,
+    *,
     translator=None,
     on_first_object_cb=None,
     data_pool=None,
@@ -45,12 +53,12 @@ def create_label(
     callbacks_bag=None,
 ):
     if translator is None:
-        translator = i18n_translator_noop
+        translator = safe_i18n_translator
     _ = translator  # i18n string marker.
     if image_loader is None:
-        image_loader = image_loader_default
+        image_loader = safe_image_loader
     if on_first_object_cb is None:
-        on_first_object_cb = first_object_callback_noop
+        on_first_object_cb = safe_fo_callback
 
     #
     # Begin UI code
