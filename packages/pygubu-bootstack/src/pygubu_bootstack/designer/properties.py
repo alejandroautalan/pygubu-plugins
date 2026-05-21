@@ -4,11 +4,40 @@ from ..config import namespace, windows, primitives
 _builder_all = f"{namespace}.*"
 
 plugin_properties = dict(
+    auto_flow=dict(
+        buid=[primitives.gridframe],
+        editor="choice",
+        values=("", "row", "column", "row-dense", "column-dense", "none"),
+        state="readonly",
+    ),
     color=dict(
         buid=_builder_all,
         editor="choice",
         values=("", "primary", "danger", "success"),
         state="readonly",
+    ),
+    columns=dict(
+        buid=primitives.gridframe,
+        editor="json_entry",
+        help="Number of columns or a list of size specs.",
+    ),
+    direction=dict(
+        buid=[primitives.packframe],
+        editor="choice",
+        values=(
+            "",
+            "vertical",
+            "horizontal",
+            "row",
+            "column",
+            "row-reverse",
+            "column-reverse",
+        ),
+        state="readonly",
+    ),
+    gap=dict(
+        buid=[primitives.packframe, primitives.gridframe],
+        editor="naturalnumber",
     ),
     icon=dict(buid=_builder_all),
     icon_only=dict(
@@ -18,13 +47,22 @@ plugin_properties = dict(
         default_value="False",
         state="readonly",
     ),
-    maxsize=dict(buid=[windows.app, windows.toplevel], editor="whentry"),
-    minsize=dict(buid=[windows.app, windows.toplevel], editor="whentry"),
+    maxsize=dict(
+        buid=[windows.app, windows.appshell, windows.toplevel], editor="whentry"
+    ),
+    minsize=dict(
+        buid=[windows.app, windows.appshell, windows.toplevel], editor="whentry"
+    ),
     resizable=dict(
         buid=[windows.app, windows.toplevel],
         editor="choice",
         values=("", "both", "horizontally", "vertically", "none"),
         state="readonly",
+    ),
+    rows=dict(
+        buid=primitives.gridframe,
+        editor="json_entry",
+        help="Number of row or a list of size specs.",
     ),
     state=[
         dict(
@@ -40,6 +78,23 @@ plugin_properties = dict(
             state="readonly",
         ),
     ],
+    sticky_items=dict(
+        buid=primitives.gridframe,
+        editor="choice",
+        values=(
+            "",
+            "n",
+            "ne",
+            "nw",
+            "e",
+            "w",
+            "s",
+            "se",
+            "sw",
+            "center",
+        ),
+        state="readonly",
+    ),
     variant=dict(
         buid=_builder_all,
         editor="choice",

@@ -34,6 +34,7 @@ from pygubu.plugins.ttk.ttkstdwidgets import (
     TTKTreeviewColumnBO,
 )
 from .config import primitives, primitives_ns, tab_group
+from .datatrans import IntOrJsonList
 
 
 class ttkbWidgetMixin:
@@ -345,7 +346,24 @@ register_widget(
 class GridFrameBO(FrameBO):
     class_ = GridFrame
     container = True
-    container_layout = False  # FIXME: howto handle this widget?
+    container_layout = False
+    children_layout_override = True
+    properties = ("rows", "columns", "gap", "sticky_items", "auto_flow", "padding")
+    ro_properties = properties
+    int_or_list = IntOrJsonList()
+
+    def add_child(self, bobject):
+        bobject.widget.grid()
+
+    def _process_property_value(self, pname, value):
+        if pname in ("rows", "columns"):
+            return self.int_or_list.transform(value)
+        return super()._process_property_value(pname, value)
+
+    def _code_process_property_value(self, targetid, pname, value: str):
+        if pname in ("rows", "columns"):
+            return str(self.int_or_list.transform(value))
+        return super()._code_process_property_value(targetid, pname, value)
 
 
 register_widget(
@@ -360,7 +378,13 @@ register_widget(
 class PackFrameBO(FrameBO):
     class_ = PackFrame
     container = True
-    container_layout = False  # FIXME: howto handle this widget?
+    container_layout = False
+    children_layout_override = True
+    properties = ("direction", "gap", "padding")
+    ro_properties = properties
+
+    def add_child(self, bobject):
+        bobject.widget.pack()
 
 
 register_widget(
