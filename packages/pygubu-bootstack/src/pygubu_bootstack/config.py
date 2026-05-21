@@ -11,6 +11,8 @@ windows_ns = SN(
     _name=namespace,
     app=10,
     toplevel=10,
+    appshell=12,
+    appshell_page=12,
 )
 windows = walkns(windows_ns)
 

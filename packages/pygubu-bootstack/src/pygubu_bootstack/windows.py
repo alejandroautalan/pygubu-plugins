@@ -83,3 +83,26 @@ class ToplevelBO(ToplevelMixin, BuilderObject):
 register_widget(
     windows.toplevel, ToplevelBO, "Toplevel", tab_group, group=windows_ns.toplevel
 )
+
+
+# The commented code bellow needs and advanced preview class. For now just omit them.
+# class AppShellBO(AppBO):
+#     class_ = AppShell
+#
+#
+# register_widget(windows.appshell, AppShellBO, "AppShell", tab_group, group=windows_ns.appshell)
+#
+#
+# class AppShellPageBO(BuilderObject):
+#     layout_required = False
+#     allowed_parents = (windows.appshell,)
+#
+#     def realize(self, parent, extra_init_args: dict = None):
+#         self.parent_bo = parent
+#         args = self._get_init_args(extra_init_args)
+#         master = parent.get_child_master()
+#         page_id = self.wmeta.identifier
+#         self.widget = master.add_page(page_id, **args)
+#         return self.widget
+#
+# register_widget(windows.appshell_page, AppShellPageBO, "AppShell.Page", tab_group, group=windows_ns.appshell_page)

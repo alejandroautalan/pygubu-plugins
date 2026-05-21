@@ -19,12 +19,12 @@ class ttkbDesignerPlugin(IDesignerPlugin):
 
         Example: for tk.Tk, tk.Toplevel should return True.
         """
-        if builder_uid in (windows.app, windows.toplevel):
+        if builder_uid in (windows.app, windows.appshell, windows.toplevel):
             return True
         return False
 
     def get_preview_builder(self, builder_uid: str):
-        if builder_uid in (windows.app, windows.toplevel):
+        if builder_uid in (windows.app, windows.toplevel, windows.appshell):
             return ToplevelFramePreviewBO
         return None
 
