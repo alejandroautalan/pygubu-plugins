@@ -42,7 +42,7 @@ class ttkbDesignerPlugin(IDesignerPlugin):
             Activate a tab of a Notebook if the selected widget is
             inside the notebook.
         """
-        xpath = ".//object[@class='ttkbootstrap.notebook_tab']"
+        xpath = ".//object[@class='bootstack.notebook_tab']"
         # find all tabs
         tabs = builder.uidefinition.root.findall(xpath)
         if tabs is None:
