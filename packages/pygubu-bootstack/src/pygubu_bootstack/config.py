@@ -1,8 +1,8 @@
 from pygubu.utils.namespace import walkns, SN
 
 
-tab_group = ("ttk", "ttkbootstrap Widgets")
-namespace = "ttkbootstrap"
+tab_group = ("ttk", "Bootstack Widgets")
+namespace = "bootstack"
 
 CONTAINER = 50
 INPUT = 90
