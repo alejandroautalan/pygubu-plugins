@@ -37,7 +37,7 @@ from .config import primitives, primitives_ns, tab_group
 from .datatrans import IntOrJsonList
 
 
-class ttkbWidgetMixin:
+class BootstackWidgetMixin:
     def _process_property_value(self, pname, value):
         if pname in ("localize", "icon_only"):
             return getboolean(value)
@@ -49,7 +49,7 @@ class ttkbWidgetMixin:
         return super()._code_process_property_value(targetid, pname, value)
 
 
-class LabelBO(ttkbWidgetMixin, BuilderObject):
+class LabelBO(BootstackWidgetMixin, BuilderObject):
     class_ = Label
     properties = (
         "class_",
@@ -94,7 +94,7 @@ register_widget(
 )
 
 
-class ButtonBO(ttkbWidgetMixin, BuilderObject):
+class ButtonBO(BootstackWidgetMixin, BuilderObject):
     class_ = Button
     properties = (
         "text",
@@ -128,7 +128,7 @@ register_widget(
 )
 
 
-class CheckButtonBO(ttkbWidgetMixin, BuilderObject):
+class CheckButtonBO(BootstackWidgetMixin, BuilderObject):
     class_ = CheckButton
     properties = (
         "text",
@@ -194,7 +194,7 @@ register_widget(
 )
 
 
-class RadioButtonBO(ttkbWidgetMixin, BuilderObject):
+class RadioButtonBO(BootstackWidgetMixin, BuilderObject):
     class_ = RadioButton
     properties = (
         "text",
@@ -249,7 +249,7 @@ register_widget(
 )
 
 
-class ComboboxBO(ttkbWidgetMixin, BuilderObject):
+class ComboboxBO(BootstackWidgetMixin, BuilderObject):
     class_ = Combobox
     properties = (
         "values",
@@ -281,7 +281,7 @@ register_widget(
 )
 
 
-class EntryBO(ttkbWidgetMixin, BuilderObject):
+class EntryBO(BootstackWidgetMixin, BuilderObject):
     class_ = Entry
     properties = (
         "textvariable",
@@ -316,7 +316,7 @@ register_widget(
 )
 
 
-class FrameBO(ttkbWidgetMixin, BuilderObject):
+class FrameBO(BootstackWidgetMixin, BuilderObject):
     class_ = Frame
     container = True
     container_layout = True
@@ -396,7 +396,7 @@ register_widget(
 )
 
 
-class LabelFrameBO(ttkbWidgetMixin, BuilderObject):
+class LabelFrameBO(BootstackWidgetMixin, BuilderObject):
     class_ = LabelFrame
     container = True
     container_layout = True
@@ -428,7 +428,7 @@ register_widget(
 )
 
 
-class MenuButtonBO(ttkbWidgetMixin, BuilderObject):
+class MenuButtonBO(BootstackWidgetMixin, BuilderObject):
     class_ = MenuButton
     properties = (
         "text",
@@ -464,7 +464,7 @@ register_widget(
 )
 
 
-class NotebookBO(ttkbWidgetMixin, BuilderObject):
+class NotebookBO(BootstackWidgetMixin, BuilderObject):
     class_ = Notebook
     container = True
     allowed_children = (primitives.notebook_tab,)
@@ -506,7 +506,7 @@ register_widget(
 NotebookTabBO.add_allowed_parent(primitives.notebook)
 
 
-class OptionMenuBO(ttkbWidgetMixin, BuilderObject):
+class OptionMenuBO(BootstackWidgetMixin, BuilderObject):
     class_ = OptionMenu
     properties = (
         "command",
@@ -545,7 +545,7 @@ register_widget(
 )
 
 
-class PanedWindowBO(ttkbWidgetMixin, BuilderObject):
+class PanedWindowBO(BootstackWidgetMixin, BuilderObject):
     class_ = PanedWindow
     container = True
     allowed_children = (primitives.panedwindow_pane,)
@@ -588,7 +588,7 @@ register_widget(
 PanedWindowPaneBO.add_allowed_parent(primitives.panedwindow)
 
 
-class ProgressbarBO(ttkbWidgetMixin, BuilderObject):
+class ProgressbarBO(BootstackWidgetMixin, BuilderObject):
     class_ = Progressbar
     properties = (
         "mode",
@@ -619,7 +619,7 @@ register_widget(
 )
 
 
-class ScaleBO(ttkbWidgetMixin, BuilderObject):
+class ScaleBO(BootstackWidgetMixin, BuilderObject):
     class_ = Scale
     properties = (
         "from_",
@@ -648,7 +648,7 @@ register_widget(
 )
 
 
-class ScrollbarBO(ttkbWidgetMixin, BuilderObject):
+class ScrollbarBO(BootstackWidgetMixin, BuilderObject):
     class_ = Scrollbar
     properties = (
         "orient",
@@ -674,7 +674,7 @@ register_widget(
 )
 
 
-class SeparatorBO(ttkbWidgetMixin, BuilderObject):
+class SeparatorBO(BootstackWidgetMixin, BuilderObject):
     class_ = Separator
     properties = (
         "orient",
@@ -698,7 +698,7 @@ register_widget(
 )
 
 
-class SizeGripBO(ttkbWidgetMixin, BuilderObject):
+class SizeGripBO(BootstackWidgetMixin, BuilderObject):
     class_ = SizeGrip
     properties = (
         "style",
@@ -716,7 +716,7 @@ register_widget(
 )
 
 
-class SpinboxBO(ttkbWidgetMixin, BuilderObject):
+class SpinboxBO(BootstackWidgetMixin, BuilderObject):
     class_ = Spinbox
     properties = (
         "from_",
